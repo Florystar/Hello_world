@@ -21,27 +21,30 @@ public class SeasonByMonth {
             case "december":
             case "january":
             case "february":
-                season = Season.WINTER;
+                System.out.println("The month " + input.toUpperCase() + " relates to the following season " + season);
                 break;
             case "march":
             case "april":
             case "may":
-                season = Season.SPRING;
+                season=season.SPRING;
+                System.out.println("The month " + input.toUpperCase() + " relates to the following season " + season);
                 break;
             case "june":
             case "july":
             case "august":
-                season = Season.SUMMER;
+                season=season.SUMMER;
+                System.out.println("The month " + input.toUpperCase() + " relates to the following season " + season);
                 break;
             case "september":
             case "october":
             case "november":
-                season = Season.AUTUMN;
+                season=season.AUTUMN;
+                System.out.println("The month " + input.toUpperCase() + " relates to the following season " + season);
                 break;
             default:
-                System.out.println("No such aju month");
+                System.out.println("No such month");
         }
-        System.out.println("The month " + input.toUpperCase() + " relates to the following season " + season);
+
     }
 }
 
