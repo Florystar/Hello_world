@@ -10,7 +10,7 @@ public class SeasonByMonth {
 
     public static void main(String arg[]) throws IOException {
         Season season;
-        season = Season.WINTER;
+        season = null;
         BufferedReader br = new BufferedReader(
                 new InputStreamReader(System.in));
         System.out.println("Please, enter the month");
@@ -21,30 +21,28 @@ public class SeasonByMonth {
             case "december":
             case "january":
             case "february":
-                System.out.println("The month " + input.toUpperCase() + " relates to the following season " + season);
+                season = Season.WINTER;
                 break;
             case "march":
             case "april":
             case "may":
-                season=season.SPRING;
-                System.out.println("The month " + input.toUpperCase() + " relates to the following season " + season);
+                season = Season.SPRING;
                 break;
             case "june":
             case "july":
             case "august":
-                season=season.SUMMER;
-                System.out.println("The month " + input.toUpperCase() + " relates to the following season " + season);
+                season = Season.SUMMER;
                 break;
             case "september":
             case "october":
             case "november":
-                season=season.AUTUMN;
-                System.out.println("The month " + input.toUpperCase() + " relates to the following season " + season);
+                season = Season.AUTUMN;
                 break;
             default:
                 System.out.println("No such month");
         }
-
+        if (season != null)
+            System.out.println("The month " + input.toUpperCase() + " relates to the following season " + season);
     }
 }
 
