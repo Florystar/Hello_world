@@ -4,7 +4,7 @@ import java.io.InputStreamReader;
 
 public class SeasonByMonth {
 
-    public static void main(String arg[]) throws IOException {
+    public static void main(String[] args) throws IOException {
         Season season;
         season = null;
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
