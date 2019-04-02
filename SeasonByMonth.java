@@ -10,7 +10,6 @@ public class SeasonByMonth {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Please, enter the month");
         String input = br.readLine();
-
         String month = input.toLowerCase();
         switch (month) {
         case "december":
@@ -40,8 +39,6 @@ public class SeasonByMonth {
             System.out.println("The month " + input.toUpperCase() + " relates to the following season " + season);
     }
 
-    public enum Season {
-        WINTER, SPRING, SUMMER, AUTUMN
-    }
+    public enum Season { WINTER, SPRING, SUMMER, AUTUMN }
 }
 
