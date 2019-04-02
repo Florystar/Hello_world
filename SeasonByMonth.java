@@ -12,28 +12,28 @@ public class SeasonByMonth {
         String input = br.readLine();
         String month = input.toLowerCase();
         switch (month) {
-        case "december":
-        case "january":
-        case "february":
-            season = Season.WINTER;
-            break;
-        case "march":
-        case "april":
-        case "may":
-            season = Season.SPRING;
-            break;
-        case "june":
-        case "july":
-        case "august":
-            season = Season.SUMMER;
-            break;
-        case "september":
-        case "october":
-        case "november":
-            season = Season.AUTUMN;
-            break;
-        default:
-            System.out.println("No such month");
+            case "december":
+            case "january":
+            case "february":
+                season = Season.WINTER;
+                break;
+            case "march":
+            case "april":
+            case "may":
+                season = Season.SPRING;
+                break;
+            case "june":
+            case "july":
+            case "august":
+                season = Season.SUMMER;
+                break;
+            case "september":
+            case "october":
+            case "november":
+                season = Season.AUTUMN;
+                break;
+            default:
+                System.out.println("No such month");
         }
         if (season != null) {
             System.out.println("The month " + input.toUpperCase() + " relates to the following season " + season);
