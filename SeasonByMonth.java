@@ -35,10 +35,11 @@ public class SeasonByMonth {
         default:
             System.out.println("No such month");
         }
-        if (season != null)
+        if (season != null) {
             System.out.println("The month " + input.toUpperCase() + " relates to the following season " + season);
+        }
     }
 
-    public enum Season { WINTER, SPRING, SUMMER, AUTUMN }
+    public enum Season {WINTER, SPRING, SUMMER, AUTUMN}
 }
 
