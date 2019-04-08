@@ -41,7 +41,7 @@ public class Student {
 
     //Method calculating of average rating
     public static double average(int... rating) {
-        int sum = 0;
+        double sum = 0;
         int count = 0;
         for (int i = 0; i < rating.length; i++) {
             sum += rating[i];
@@ -53,8 +53,11 @@ public class Student {
 
     //Method of changing rating
     public static double changeStudentsRating(int changeRating, int... rating) {
+        //int[] newRating;
+        //newRating = null;
         for (int i = 0; i < rating.length; i++) {
             rating[i] = rating[i] + changeRating;
+            //newRating[i] = rating[i];
         }
         double newAverage = average(rating);
         return newAverage;
@@ -71,11 +74,11 @@ public class Student {
         System.out.println("The rating of second student is " + s2.rating);
         System.out.println("The rating of third student is " + s3.rating);
         System.out.println("-------------------------------------------------------------");
-        System.out.println(
-                "The average rating of all students before changing: " + average(s1.rating, s2.rating, s3.rating));
-        System.out.println(
-                "The new average rating of all students after changing: " + changeStudentsRating(15, s1.rating,
-                        s3.rating));
+        System.out.println(String.format(
+                "The average rating of all students before changing: %.2f", average(s1.rating, s2.rating, s3.rating)));
+        System.out.println(String.format(
+                "The new average rating of all students after changing: %.2f", changeStudentsRating(15, s1.rating, s2.rating,
+                        s3.rating)));
     }
 }
 
