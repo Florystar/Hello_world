@@ -10,7 +10,6 @@ public class Student {
     public Student(String name, int rating) {
         this.name = name;
         this.rating = rating;
-
     }
 
     //Creation methods - Getters and Setters - to access fields
@@ -54,8 +53,6 @@ public class Student {
 
     //Method of changing rating
     public static double changeStudentsRating(int changeRating, int... rating) {
-        //int[] newRating;
-        //   newRating = null;
         for (int i = 0; i < rating.length; i++) {
             rating[i] = rating[i] + changeRating;
         }
@@ -79,9 +76,7 @@ public class Student {
         System.out.println(
                 "The new average rating of all students after changing: " + changeStudentsRating(15, s1.rating,
                         s3.rating));
-
     }
-
 }
 
 
