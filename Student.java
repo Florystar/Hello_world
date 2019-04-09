@@ -31,7 +31,12 @@ public class Student {
 
     //Method for selecting a better Student
     public boolean betterStudent(Student s2) {
-        return getRating() > s2.rating;
+        if (getRating() > s2.rating) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
     //Method toString
@@ -52,15 +57,11 @@ public class Student {
     }
 
     //Method of changing rating
-    public static double changeStudentsRating(int changeRating, int... rating) {
-        //int[] newRating;
-        //newRating = null;
-        for (int i = 0; i < rating.length; i++) {
-            rating[i] = rating[i] + changeRating;
-            //newRating[i] = rating[i];
+    public static Student[] changeStudentsRating(int changeRating, Student... s) {
+        for (int i = 0; i < s.length; i++) {
+            s[i].rating = s[i].rating + changeRating;
         }
-        double newAverage = average(rating);
-        return newAverage;
+        return s;
     }
 
     public static void main(String[] args) {
@@ -76,8 +77,9 @@ public class Student {
         System.out.println("-------------------------------------------------------------");
         System.out.println(String.format(
                 "The average rating of all students before changing: %.2f", average(s1.rating, s2.rating, s3.rating)));
+        changeStudentsRating(15, s2);
         System.out.println(String.format(
-                "The new average rating of all students after changing: %.2f", changeStudentsRating(15, s1.rating, s2.rating,
+                "The new average rating of all students after changing: %.2f", average( s1.rating, s2.rating,
                         s3.rating)));
     }
 }
