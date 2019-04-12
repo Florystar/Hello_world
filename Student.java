@@ -1,8 +1,9 @@
 public class Student {
     private String name;
     private int rating;
-    static int count=0;
-    static double sum=0;
+    static int count = 0;
+    static double sum = 0;
+    static double average = 0;
 
     //Create default constructor
     public Student() {
@@ -56,9 +57,8 @@ public class Student {
     }
 
     //Method calculating of average rating
-    public static double average() {
-        double average = 0;
-        if (count==0)  {
+    public static double getAvgRating() {
+        if (count == 0)  {
             return average;
         } else {
             return sum / count;
@@ -66,11 +66,17 @@ public class Student {
     }
 
     //Method of changing rating
-    public double changeStudentsRating(int changeRating) {
+    public double changeRating(int changeRating) {
             sum-= this.rating;
             this.setRating(changeRating);
         return sum;
     }
+    
+    public void removeStudent(Student ... student) {
+        sum -= this.rating;
+        count--;
+    }
+
 
     public static void main(String[] args) {
         Student s1 = new Student("Octavian");
@@ -85,15 +91,17 @@ public class Student {
         System.out.println("The rating of third student is " + s3.rating);
         System.out.println("-------------------------------------------------------------");
         System.out.println(String.format(
-                "The average rating of all students before changing: %.2f", average()));
-        s1.changeStudentsRating(25);
+                "The average rating of all students before changing: %.2f", Student.getAvgRating()));
+        s1.changeRating(25);
         System.out.println("The rating of first student AFTER change is " + s1.rating);
         System.out.println("The rating of second student AFTER change is " + s2.rating);
         System.out.println("The rating of third student AFTER change is " + s3.rating);
         System.out.println("-------------------------------------------------------------");
         System.out.println(String.format(
-                "The new average rating of all students after changing: %.2f", average()));
+                "The new average rating of all students after changing: %.2f", Student.getAvgRating()));
     }
+
+
 }
 
 

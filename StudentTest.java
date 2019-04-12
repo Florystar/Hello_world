@@ -12,7 +12,7 @@ public class StudentTest {
     @Test
     public void testGetAvgRating() {
 
-        assertEquals(Student.average(), 0.0d, "Average rating is wrong");
+        assertEquals(Student.getAvgRating(), 0.0d, "Average rating is wrong");
 
         Student student1 = new Student("Petro");
         student1.setRating(15);
@@ -22,7 +22,7 @@ public class StudentTest {
         students.add(student1);
         students.add(student2);
 
-        assertEquals(Student.average(), 22.5d, "Average rating is wrong");
+        assertEquals(Student.getAvgRating(), 22.5d, "Average rating is wrong");
     }
 
     @Test
@@ -96,13 +96,13 @@ public class StudentTest {
         students.add(student4);
 
         assertTrue(student3.betterStudent(student4),
-                student1 + " is not better than " + student2);
+                student3 + " is not better than " + student4);
     }
 
     @Test
     public void testChangeRating() {
 
-        assertEquals(Student.average(), 0.0d, "Average rating is wrong");
+        assertEquals(Student.getAvgRating(), 0.0d, "Average rating is wrong");
 
         Student student1 = new Student("Petro");
         student1.setRating(15);
@@ -114,11 +114,11 @@ public class StudentTest {
 
         students.add(student2);
 
-        assertEquals(Student.average(), 22.5d, "Average rating is wrong");
+        assertEquals(Student.getAvgRating(), 22.5d, "Average rating is wrong");
 
-        student2.changeStudentsRating(51);
+        student2.changeRating(51);
 
-        assertEquals(Student.average(), 33.0d, "Average rating is wrong");
+        assertEquals(Student.getAvgRating(), 33.0d, "Average rating is wrong");
     }
 
     @Test
@@ -135,9 +135,9 @@ public class StudentTest {
                 "toString method does not contains student's rating");
     }
 
-   //@AfterMethod
-   //public void tearDown() {
-    //    students.forEach(Student :: removeStudent);
-   //     students.clear();
-   //}
+   @AfterMethod
+   public void tearDown() {
+        students.forEach(Student :: removeStudent);
+        students.clear();
+   }
 }
