@@ -9,8 +9,6 @@ public class ContractedEmployee extends Employee {
 
   public ContractedEmployee(String employeeId, String name, String federalTaxId) {
     super(employeeId, name);
-    //this.employeeId = employeeId;
-    //this.name = name;
     this. federalTaxId = federalTaxId;
   }
 
