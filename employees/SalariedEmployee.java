@@ -4,9 +4,8 @@ package employees;
  * Creation of Child class from Employee.
  */
 public class SalariedEmployee extends Employee {
-  String socialSecurityNumber;
-  double fixedMonthlyPayment;
-  double averageMonthlySalary;
+  private String socialSecurityNumber;
+  private double fixedMonthlyPayment;
 
   public SalariedEmployee(String employeeId, String name, String socialSecurityNumber) {
     super(employeeId, name);

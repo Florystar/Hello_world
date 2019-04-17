@@ -7,8 +7,6 @@ public class ContractedEmployee extends Employee {
   private String federalTaxId;
   private double hourlyRate;
   private double numberOfHoursWorked;
-  private double averageMonthlySalary;
-
 
   public ContractedEmployee(String employeeId, String name, String federalTaxId) {
     super(employeeId, name);
@@ -60,7 +58,4 @@ public class ContractedEmployee extends Employee {
     System.out.println(String.format("The pay for Contracted employee is %s",
         empl1.getAverageMonthlySalary()));
   }
-
-
-
 }
