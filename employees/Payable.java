@@ -1,4 +1,4 @@
-package employeePackage;
+package employees;
 
 interface Payable {
   void calculatePay();

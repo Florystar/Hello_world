@@ -1,5 +1,8 @@
-package employeePackage;
+package employees;
 
+/**
+ * Creation of Child class from Employee.
+ */
 public class ContractedEmployee extends Employee {
   private String federalTaxId;
   private double hourlyRate;
@@ -46,14 +49,16 @@ public class ContractedEmployee extends Employee {
     return this.averageMonthlySalary;
   }
 
-  // TODO fill in code here
+  /**
+   * Calculation of Salary for Rate Payment.
+   */
   public static void main(String[] args) {
     ContractedEmployee empl1 = new ContractedEmployee("123456", "Amanda", "987654");
     empl1.setHourlyRate(48);
     empl1.setNumberOfHoursWorked(160);
     empl1.calculatePay();
-   //double averageMonthlySalary = empl1.hourlyRate * empl1.numberOfHoursWorked;
-    System.out.println(String.format("The pay for Contracted employee is %s", empl1.getAverageMonthlySalary()));
+    System.out.println(String.format("The pay for Contracted employee is %s",
+        empl1.getAverageMonthlySalary()));
   }
 
 

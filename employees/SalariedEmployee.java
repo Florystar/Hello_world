@@ -1,5 +1,8 @@
-package employeePackage;
+package employees;
 
+/**
+ * Creation of Child class from Employee.
+ */
 public class SalariedEmployee extends Employee {
   String socialSecurityNumber;
   double fixedMonthlyPayment;
@@ -36,11 +39,15 @@ public class SalariedEmployee extends Employee {
     return this.averageMonthlySalary;
   }
 
+  /**
+   * Calculation of salary for Fixed Monthly Payment.
+   */
   public static void main(String[] args) {
     SalariedEmployee empl2 = new SalariedEmployee("123456", "Amanda", "987654");
     empl2.setFixedMonthlyPayment(69);
     empl2.calculatePay();
-    System.out.println(String.format("The pay for Salaried employee is %s", empl2.getAverageMonthlySalary()));
+    System.out.println(String.format("The pay for Salaried employee is %s",
+        empl2.getAverageMonthlySalary()));
   }
 }
 

@@ -1,6 +1,6 @@
-package employeePackage;
+package employees;
 
-public class Employee {
+public abstract class Employee implements Payable {
   private String employeeId;
   private String name;
   protected double averageMonthlySalary;
@@ -30,12 +30,9 @@ public class Employee {
     return this.averageMonthlySalary;
   }
 
-  public void calculatePay() {
-  }
-
   @Override
   public String toString() {
-    return String.format("Employee [name = %s, employeeId = %s, average salary = %.2f]", name, employeeId, getAverageMonthlySalary());
+    return String.format("Employee [name = %s, employeeId = %s, average salary = %.2f]",
+        name, employeeId, getAverageMonthlySalary());
   }
 }
-
